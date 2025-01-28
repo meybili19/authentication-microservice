@@ -2,12 +2,10 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from werkzeug.security import  check_password_hash
 
-# Crear instancia de SQLAlchemy
 db = SQLAlchemy()
 
-# Modelo de usuario
 class User(db.Model):
-    __tablename__ = 'Users'  # Usar la tabla existente
+    __tablename__ = 'Users'  
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
