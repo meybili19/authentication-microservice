@@ -54,6 +54,6 @@ jobs:
               --env DB_NAME=${{ secrets.DB_NAME_M }} \
               --env DB_ENCRYPT_KEY=${{ secrets.DB_ENCRYPT_KEY_M }}
               -p 5004:5004 \
-              ${{ secrets.DOCKER_USERNAME }}/authentication_microservice_container:latest
+              ${{ secrets.DOCKER_USERNAME }}/authentication_microservice_image:latest
 
             echo "✅ Despliegue completado con éxito."
