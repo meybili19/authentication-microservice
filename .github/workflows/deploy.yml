@@ -3,7 +3,7 @@ name: Deploy to AWS
 on:
   push:
     branches:
-      - authentication/docker/aws
+      - test
 
 jobs:
   deploy:
