@@ -1,24 +1,21 @@
-# Use a Python base image
-FROM python:3.9-slim
+FROM python:3.9
 
-# Set the working directory inside the container
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy the necessary files to the container image
-COPY . /app
 
-# Install system dependencies required for MySQL
-RUN apt-get update && apt-get install -y \
-    gcc \
-    g++ \
-    libmysqlclient-dev \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+# Copy the required files
+COPY requirements.txt .
 
-# Install Python dependencies
+# Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port on which Flask will run
-EXPOSE 5000
 
-# Set the default command to run the application
-CMD ["python", "app.py"]
+# Copy the source code to the container
+COPY . .
+
+# Expose the port on which the application will run
+EXPOSE 5004
+
+# Command to run the application
+CMD ["python", "-m", "src.app"]
