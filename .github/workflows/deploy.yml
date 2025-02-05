@@ -43,7 +43,7 @@ jobs:
 
             # Descargar la última versión de la imagen desde Docker Hub
             echo "📥 Descargando nueva imagen..."
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/authentication_microservice_container:latest
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/authentication_microservice_image:latest
 
             # Ejecutar el nuevo contenedor con las variables de entorno
             echo "🚀 Ejecutando nuevo contenedor..."
