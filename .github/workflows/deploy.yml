@@ -52,7 +52,7 @@ jobs:
               --env DB_PASSWORD=${{ secrets.DB_PASSWORD_M }} \
               --env DB_SERVER=${{ secrets.DB_SERVER_M }} \
               --env DB_NAME=${{ secrets.DB_NAME_M }} \
-              --env DB_ENCRYPT_KEY=${{ secrets.SECRET_KEY }} \
+              --env SECRET_KEY=${{ secrets.SECRET_KEY }} \
               -p 5004:5004 \
               ${{ secrets.DOCKER_USERNAME }}/authentication_microservice_image:latest
 
