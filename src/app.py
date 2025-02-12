@@ -5,12 +5,9 @@ from src.models.models import db
 from src.routes.routes import authenticate_user
 
 
-app = Flask(__name__,  static_folder='FRONTEND')
+app = Flask(__name__)
 
-from flask_cors import CORS
-
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-
+CORS(app)
 
 
 app.config.from_object(Config)
