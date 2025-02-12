@@ -7,7 +7,10 @@ from src.routes.routes import authenticate_user
 
 app = Flask(__name__,  static_folder='FRONTEND')
 
-CORS(app)
+from flask_cors import CORS
+
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
 
 
 app.config.from_object(Config)
